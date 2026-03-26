@@ -44,11 +44,13 @@ jobs:
           echo "$RUN_ID" > model_info.txt
           echo "Saved run ID to model_info.txt"
 
-      - name: Upload model info artifact
-        uses: actions/upload-artifact@v6
+      - name: Upload model info and mlruns artifact
+        uses: actions/upload-artifact@v4
         with:
           name: model-info
-          path: model_info.txt
+          path: |
+            model_info.txt
+            mlruns/
 
   deploy:
     name: Deploy Model
@@ -71,8 +73,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install mlflow
 
-      - name: Download model info artifact
-        uses: actions/download-artifact@v5
+      - name: Download model info and mlruns artifact
+        uses: actions/download-artifact@v4
         with:
           name: model-info
 

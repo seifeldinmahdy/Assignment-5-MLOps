@@ -20,10 +20,7 @@ def main() -> int:
     parser.add_argument("--threshold", type=float, default=0.85)
     args = parser.parse_args()
 
-    tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
-    if not tracking_uri:
-        print("MLFLOW_TRACKING_URI is not set.", file=sys.stderr)
-        return 2
+    tracking_uri = os.getenv("MLFLOW_TRACKING_URI", "file:./mlruns")
 
     run_id = read_run_id(args.model_info)
     client = MlflowClient(tracking_uri=tracking_uri)
