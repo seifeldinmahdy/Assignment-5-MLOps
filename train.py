@@ -40,7 +40,9 @@ def main() -> None:
         model.fit(X_train, y_train)
 
         predictions = model.predict(X_test)
-        accuracy = accuracy_score(y_test, predictions)
+        
+        # Intentionally hardcoding a low accuracy (< 0.85) to trigger a pipeline failure
+        accuracy = 0.50 # accuracy_score(y_test, predictions)
 
         mlflow.log_param("model", "LogisticRegression")
         mlflow.log_param("dataset", dataset_path)
