@@ -1,0 +1,11 @@
+md5: 513f335bb16c20de3c760303294e40a1
+frozen: true
+deps:
+- checksum: '"57102f9d85a3278a2713c5a7dccb600533d2a467d3e7e0dc662ca6de16afac42"'
+  size: 13478
+  hash: md5
+  path: 
+    https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv
+outs:
+- hash: md5
+  path: penguins.csv
