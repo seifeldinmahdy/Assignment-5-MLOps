@@ -48,7 +48,7 @@ jobs:
           name: model-info
           path: |
             model_info.txt
-            mlruns/
+            mlflow.db
 
   deploy:
     name: Deploy Model

@@ -21,7 +21,7 @@ def main() -> int:
     args = parser.parse_args()
 
     run_id = read_run_id(args.model_info)
-    client = MlflowClient(tracking_uri="file:./mlruns")
+    client = MlflowClient(tracking_uri="sqlite:///mlflow.db")
 
     run = client.get_run(run_id)
     value = run.data.metrics.get(args.metric)

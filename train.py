@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 def main() -> None:
-    mlflow.set_tracking_uri("file:./mlruns")
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
     mlflow.set_experiment("assignment5-classifier")
 
     dataset_path = "data/penguins.csv"
