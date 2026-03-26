@@ -10,10 +10,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 def main() -> None:
-    tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
-    if tracking_uri:
-        mlflow.set_tracking_uri(tracking_uri)
-
+    mlflow.set_tracking_uri("file:./mlruns")
     mlflow.set_experiment("assignment5-classifier")
 
     dataset_path = "data/penguins.csv"
